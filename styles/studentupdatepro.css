@@ -1,0 +1,261 @@
+/* =========================
+   src/styles/studentupdatepro.css
+   Match jobseeker update look (clean + blue)
+========================= */
+
+:root{
+  --su-bg: #f3f8ff;
+  --su-card: #ffffff;
+  --su-border: #e6eefc;
+  --su-text: #0b1b33;
+  --su-muted: #5f6f8a;
+
+  --su-blue: #1d6dff;
+  --su-blue-soft: #eaf2ff;
+  --su-shadow: 0 10px 30px rgba(13, 40, 80, 0.08);
+}
+
+.su-page{
+  padding: 24px;
+  background: var(--su-bg);
+  min-height: 100vh;
+}
+
+.su-card{
+  background: var(--su-card);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--su-shadow);
+  border: 1px solid var(--su-border);
+  max-width: 1100px;
+  margin: auto;
+}
+
+.su-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  gap: 12px;
+}
+
+.su-title{
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--su-text);
+}
+
+.su-sub{
+  font-size: 14px;
+  color: var(--su-muted);
+  margin-top: 4px;
+}
+
+.su-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.su-btnPrimary{
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(29,109,255,0.45);
+  background: var(--su-blue);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.su-btnPrimary:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+.su-btnPrimary:disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.su-btnSecondary{
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(29,109,255,0.35);
+  background: var(--su-blue-soft);
+  color: var(--su-blue);
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.su-btnSecondary:hover{
+  background: var(--su-blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.su-alert{
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 14px;
+  border: 1px solid var(--su-border);
+}
+
+.su-error{
+  background: rgba(255, 76, 76, 0.10);
+  color: #b21d1d;
+}
+
+.su-success{
+  background: rgba(40, 190, 120, 0.12);
+  color: #0f7a3e;
+}
+
+.su-loading{
+  text-align: center;
+  padding: 40px 0;
+  color: var(--su-muted);
+}
+
+/* form layout */
+.su-grid{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+}
+
+.su-cardLeft,
+.su-cardRight{
+  background: #fff;
+  border: 1px solid var(--su-border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.su-avatarWrap{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.su-avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--su-blue-soft);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(29,109,255,0.18);
+}
+
+.su-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.su-avatarFallback{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--su-blue);
+}
+
+.su-hiddenFile{
+  display: none;
+}
+
+.su-avatarControls{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.su-btnMini{
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(29,109,255,0.35);
+  background: var(--su-blue-soft);
+  color: var(--su-blue);
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.su-btnMini:hover{
+  background: var(--su-blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.su-note{
+  color: var(--su-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.su-section,
+.su-row{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.su-label{
+  font-size: 13px;
+  color: var(--su-muted);
+  font-weight: 700;
+}
+
+.su-input,
+.su-textarea{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--su-border);
+  background: #fff;
+  color: var(--su-text);
+  padding: 11px 12px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.su-textarea{
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.55;
+}
+
+.su-input:focus,
+.su-textarea:focus{
+  border-color: rgba(29,109,255,0.55);
+  box-shadow: 0 0 0 3px rgba(29,109,255,0.16);
+}
+
+.isDisabled{
+  background: #f3f6fb;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* responsive */
+@media(max-width: 900px){
+  .su-grid{ grid-template-columns: 1fr; }
+}
+
+@media(max-width: 768px){
+  .su-head{ flex-direction: column; align-items: flex-start; }
+}

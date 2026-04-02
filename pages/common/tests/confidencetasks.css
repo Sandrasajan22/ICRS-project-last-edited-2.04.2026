@@ -1,0 +1,247 @@
+.conf-page-bg {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f3f9ff 0%, #eef6ff 100%);
+  padding: 28px 16px;
+}
+
+.conf-container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5eef7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.conf-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.conf-topbar h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.conf-subtitle {
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.conf-back-btn {
+  border: none;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.conf-player-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.conf-player-badge {
+  background: linear-gradient(135deg, #f8fbff, #eff6ff);
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.conf-player-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.conf-filters {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.conf-filters select,
+.conf-input-group input,
+.conf-input-group select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  font-size: 14px;
+  outline: none;
+  color: #0f172a;
+}
+
+.conf-btn,
+.conf-submit-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.conf-submit-btn {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.conf-error-box {
+  margin: 14px 0 20px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+  font-weight: 600;
+}
+
+.conf-level-status-box,
+.conf-header-box,
+.conf-result-box {
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.conf-level-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.conf-level-tile {
+  border-radius: 14px;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.conf-level-tile.unlocked {
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.conf-level-tile.locked {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+}
+
+.conf-task-list {
+  display: grid;
+  gap: 18px;
+}
+
+.conf-task-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+}
+
+.conf-task-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.conf-task-head h4 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.conf-task-focus {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.conf-task-instruction {
+  margin: 14px 0;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.conf-task-meta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.conf-task-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  align-items: end;
+}
+
+.conf-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.conf-input-group {
+  display: grid;
+  gap: 8px;
+}
+
+.conf-input-group label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .conf-container {
+    padding: 18px;
+  }
+
+  .conf-topbar,
+  .conf-player-card,
+  .conf-level-grid,
+  .conf-filters,
+  .conf-task-controls {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .conf-btn,
+  .conf-submit-btn,
+  .conf-back-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  width: 100%;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(49, 1, 51, 0.75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+.logo h2 {
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-btn {
+  background:#1e40af;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: #000;
+}
+
+/* HERO SECTION */
+.hero-section {
+  height: 100vh;
+  position: relative;
+}
+
+.video-hero {
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 18px;
+  max-width: 800px;
+}
+
+/* SLIDER SECTION */
+.slider-section {
+  padding: 80px 40px;
+  background: #f4f6f8;
+  text-align: center;
+}
+
+.slider-section h2 {
+  margin-bottom: 40px;
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(300px * 10);
+  animation: scroll 30s linear infinite;
+}
+
+.slide {
+  width: 300px;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.slide p {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* LOOP ANIMATION */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-300px * 5));
+  }
+}
+
+/* FOOTER */
+.footer {
+ background: linear-gradient(90deg, #0f172a, #1e3a8a); /* dark blue → blue */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.get-started-btn {
+  margin-top: 22px;
+  display: inline-block;
+  padding: 14px 36px;
+  background-color: #1e40af;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}

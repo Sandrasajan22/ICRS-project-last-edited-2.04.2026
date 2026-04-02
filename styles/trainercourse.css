@@ -1,0 +1,296 @@
+/* =========================================
+   Trainer Skill Trainings (Light Mode)
+   Professional UI — matches ViewProfile theme
+   File: src/styles/trainercourse.css
+========================================= */
+
+.tc-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 14px;
+  background: #f8fafc;
+}
+
+.tc-card {
+  width: min(980px, 100%);
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.10);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1d4ed8, #2563eb, #22c55e);
+}
+
+/* ===== Header ===== */
+.tc-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.tc-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 950;
+  color: #0f172a;
+  letter-spacing: 0.2px;
+}
+
+/* Toggle button (Add / Close) */
+.tc-toggleBtn {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid rgba(29, 78, 216, 0.35);
+  background: rgba(29, 78, 216, 0.06);
+  color: #1d4ed8;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.tc-toggleBtn:hover {
+  background: rgba(29, 78, 216, 0.12);
+  transform: translateY(-1px);
+}
+
+.tc-toggleBtn:active {
+  transform: translateY(0);
+}
+
+/* optional "open/close" variants */
+.tc-toggleBtnOpen {
+  /* keep base styling */
+}
+
+.tc-toggleBtnClose {
+  border-color: rgba(239, 68, 68, 0.28);
+  background: rgba(239, 68, 68, 0.08);
+  color: #b91c1c;
+}
+
+.tc-toggleBtnClose:hover {
+  background: rgba(239, 68, 68, 0.14);
+}
+
+/* ===== Form ===== */
+.tc-form {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.tc-formTitle {
+  font-size: 14px;
+  font-weight: 950;
+  color: #0f172a;
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+
+/* inputs */
+.tc-input,
+.tc-select,
+.tc-textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: #ffffff;
+  padding: 11px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.16s ease;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+}
+
+.tc-textarea {
+  min-height: 98px;
+  resize: vertical;
+  line-height: 1.55;
+  font-weight: 650;
+  color: #334155;
+  margin-top: 10px;
+}
+
+/* placeholders */
+.tc-input::placeholder,
+.tc-textarea::placeholder {
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+/* focus */
+.tc-input:focus,
+.tc-select:focus,
+.tc-textarea:focus {
+  border-color: rgba(29, 78, 216, 0.38);
+  box-shadow:
+    0 0 0 4px rgba(29, 78, 216, 0.12),
+    0 10px 22px rgba(15, 23, 42, 0.06);
+}
+
+/* select tweaks */
+.tc-select {
+  cursor: pointer;
+}
+
+/* grid for compact fields */
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* submit button */
+.tc-submitBtn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(29, 78, 216, 0.25);
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  color: #ffffff;
+  font-weight: 950;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 14px 26px rgba(29, 78, 216, 0.22);
+}
+
+.tc-submitBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 34px rgba(29, 78, 216, 0.26);
+}
+
+.tc-submitBtn:active {
+  transform: translateY(0);
+}
+
+.tc-submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+}
+
+/* ===== List ===== */
+.tc-list {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.tc-list > div {
+  color: #64748b;
+  font-weight: 800;
+}
+
+/* item card */
+.tc-item {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.tc-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.tc-itemTitle {
+  font-size: 15px;
+  font-weight: 950;
+  color: #0f172a;
+  letter-spacing: 0.2px;
+}
+
+.tc-itemMeta {
+  margin-top: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* actions */
+.tc-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tc-editBtn,
+.tc-deleteBtn {
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-weight: 950;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  border: 1px solid transparent;
+}
+
+/* edit */
+.tc-editBtn {
+  border-color: rgba(29, 78, 216, 0.32);
+  background: rgba(29, 78, 216, 0.07);
+  color: #1d4ed8;
+}
+
+.tc-editBtn:hover {
+  background: rgba(29, 78, 216, 0.12);
+  transform: translateY(-1px);
+}
+
+/* delete */
+.tc-deleteBtn {
+  border-color: rgba(239, 68, 68, 0.30);
+  background: rgba(239, 68, 68, 0.08);
+  color: #b91c1c;
+}
+
+.tc-deleteBtn:hover {
+  background: rgba(239, 68, 68, 0.14);
+  transform: translateY(-1px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .tc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tc-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tc-toggleBtn {
+    width: 100%;
+  }
+}

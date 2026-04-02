@@ -1,0 +1,111 @@
+:root{
+  --bg: #f6f9ff;
+  --card: #fff;
+  --muted: #6b7a95;
+  --text: #0b1b33;
+  --accent: #1d6dff;
+  --accent-soft: #eaf2ff;
+  --shadow: 0 10px 30px rgba(13,40,80,0.06);
+}
+
+.je-page{
+  padding: 28px;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.je-card{
+  max-width: 1100px;
+  margin: auto;
+  background: var(--card);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(230,238,252,0.9);
+}
+
+.je-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.je-title{ font-size:20px; font-weight:800; color:var(--text); margin:0; }
+.je-sub{ font-size:13px; color:var(--muted); margin-top:4px; }
+
+.je-actions{ display:flex; gap:10px; }
+
+.je-btnPrimary{
+  background:var(--accent);
+  color:#fff;
+  padding:9px 14px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+}
+.je-btnPrimary:disabled{ opacity:0.7; cursor:default; }
+
+.je-btnSecondary{
+  background:#fff;
+  color:var(--accent);
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid rgba(29,109,255,0.15);
+  cursor:pointer;
+  font-weight:700;
+}
+
+.je-alert{ padding:12px 14px; border-radius:10px; margin-bottom:12px; }
+.je-error{ background:#fff0f0; color:#b32727; border:1px solid #f5c6c6; }
+.je-success{ background:#f0fff6; color:#0b7a3a; border:1px solid #c9f0d7; }
+
+.je-loading{ padding:40px 20px; text-align:center; color:var(--muted); }
+
+/* layout grid */
+.je-grid{ display:grid; grid-template-columns: 360px 1fr; gap:18px; align-items:start; }
+
+/* left column (avatar + about) */
+.je-cardLeft{ background:transparent; display:flex; flex-direction:column; gap:14px; }
+.je-avatarWrap{ display:flex; flex-direction:column; gap:12px; align-items:flex-start; }
+
+.je-avatar{
+  width:120px; height:120px; border-radius:50%;
+  overflow:hidden; display:flex; align-items:center; justify-content:center;
+  border: 3px solid rgba(29,109,255,0.14);
+  background:var(--accent-soft);
+}
+.je-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+.je-avatarFallback{ font-size:34px; font-weight:900; color:var(--accent); width:100%; height:100%; display:grid; place-items:center; }
+
+.je-avatarControls{ display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+.je-btnMini{ padding:8px 10px; border-radius:8px; border:1px solid rgba(29,109,255,0.12); background:var(--accent-soft); color:var(--accent); cursor:pointer; font-weight:700; }
+
+.je-note{ font-size:12px; color:var(--muted); }
+
+/* right column */
+.je-cardRight{ display:flex; flex-direction:column; gap:12px; }
+
+/* fields */
+.je-row{ display:flex; flex-direction:column; gap:6px; }
+.je-label{ font-weight:700; color:var(--muted); font-size:13px; }
+.je-input, .je-textarea{ width:100%; padding:12px 14px; border-radius:10px; border:1px solid #eef4ff; background:#fbfdff; font-size:14px; color:var(--text); box-sizing:border-box; }
+.je-input.isDisabled{ opacity:0.7; background:#f5f7fb; cursor:not-allowed; }
+.je-textarea{ min-height:120px; resize:vertical; }
+
+/* left small sections */
+.je-section{ display:flex; flex-direction:column; gap:8px; }
+
+/* chips / skills preview */
+.je-chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+.je-chip{ padding:6px 10px; background:rgba(29,109,255,0.12); color:var(--accent); border-radius:999px; font-weight:800; font-size:12px; border:1px solid rgba(29,109,255,0.14); }
+
+/* hidden file */
+.je-hiddenFile{ display:none; }
+
+/* responsive */
+@media (max-width: 920px){
+  .je-grid{ grid-template-columns: 1fr; }
+  .je-cardLeft{ align-items:flex-start; }
+}

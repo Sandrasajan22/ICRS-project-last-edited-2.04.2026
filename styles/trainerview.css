@@ -1,0 +1,489 @@
+/* =========================
+   BLUE THEME + INSTAGRAM STYLE POSTS GRID
+   (Replace your existing CSS with this OR paste and remove duplicate vp-postGrid rules)
+========================= */
+
+/* -------- Theme tokens (easy to change) -------- */
+:root{
+  --vp-bg: #f3f8ff;
+  --vp-card: #ffffff;
+  --vp-border: #e6eefc;
+  --vp-text: #0b1b33;
+  --vp-muted: #5f6f8a;
+
+  --vp-blue: #1d6dff;
+  --vp-blue-2: #3b82f6;
+  --vp-blue-soft: #eaf2ff;
+  --vp-shadow: 0 10px 30px rgba(13, 40, 80, 0.08);
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+.vp-page{
+  padding: 24px;
+  background: var(--vp-bg);
+  min-height: 100vh;
+}
+
+.vp-card{
+  background: var(--vp-card);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--vp-shadow);
+  border: 1px solid var(--vp-border);
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.vp-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.vp-title{
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--vp-text);
+}
+
+.vp-sub{
+  font-size: 14px;
+  color: var(--vp-muted);
+  margin-top: 4px;
+}
+
+.vp-actions{
+  display: flex;
+  gap: 10px;
+}
+
+.vp-btnOutline{
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(29,109,255,0.35);
+  background: var(--vp-blue-soft);
+  color: var(--vp-blue);
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.vp-btnOutline:hover{
+  background: var(--vp-blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   TOP SECTION
+========================= */
+.vp-top{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.vp-photoBox{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--vp-blue-soft);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(29,109,255,0.18);
+}
+
+.vp-photoImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vp-photoFallback{
+  font-size: 14px;
+  color: var(--vp-muted);
+}
+
+.vp-summary{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vp-name{
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--vp-text);
+}
+
+.vp-meta{
+  display: flex;
+  gap: 8px;
+  color: var(--vp-muted);
+  font-size: 14px;
+}
+
+.vp-dot{
+  color: #aab7cc;
+}
+
+.vp-roleTag {
+  background: linear-gradient(135deg, #1d6dff, #004ecc);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(29, 109, 255, 0.2);
+}
+
+.vp-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--vp-border);
+}
+
+.vp-statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.vp-statVal {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--vp-text);
+}
+
+.vp-statLab {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   GRID FIELDS
+========================= */
+.vp-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.vp-field{
+  display: flex;
+  flex-direction: column;
+}
+
+.vp-full{
+  grid-column: span 2;
+}
+
+.vp-label{
+  font-size: 13px;
+  color: var(--vp-muted);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.vp-value{
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-text);
+}
+
+.vp-about{
+  font-size: 14px;
+  line-height: 1.6;
+  color: #233a60;
+}
+
+.vp-loading{
+  text-align: center;
+  padding: 40px 0;
+  color: var(--vp-muted);
+}
+
+.vp-muted{
+  color: var(--vp-muted);
+  font-size: 14px;
+}
+
+/* =========================
+   SKILL TRAININGS
+========================= */
+.vp-labelRow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.vp-btnMini{
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(29,109,255,0.35);
+  background: var(--vp-blue-soft);
+  color: var(--vp-blue);
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.vp-btnMini:hover{
+  background: var(--vp-blue);
+  color: #fff;
+}
+
+.vp-skillGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.vp-skillCard{
+  border: 1px solid var(--vp-border);
+  border-radius: 14px;
+  padding: 14px;
+  background: #f8fbff;
+}
+
+.vp-skillTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vp-skillTitle{
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--vp-text);
+}
+
+.vp-pill{
+  background: rgba(29,109,255,0.12);
+  color: var(--vp-blue);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.vp-skillMeta{
+  font-size: 12px;
+  color: var(--vp-muted);
+  margin-top: 6px;
+}
+
+.vp-skillDesc{
+  font-size: 13px;
+  margin-top: 8px;
+  color: #233a60;
+}
+
+/* =========================
+   POSTS (INSTAGRAM PROFILE GRID)
+   Uses your JSX classes: vp-postGrid, vp-postThumb, vp-thumbMedia, vp-noMedia
+========================= */
+
+.vp-postGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* IG style */
+  gap: 6px; /* tight spacing like Instagram */
+  margin-top: 6px;
+}
+
+@media (max-width: 900px){
+  .vp-postGrid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px){
+  .vp-postGrid{ grid-template-columns: repeat(3, 1fr); } /* IG keeps 3 if possible */
+}
+
+/* square tiles */
+.vp-postThumb{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid rgba(230,238,252,0.9);
+  background: #f0f6ff;
+  transition: 0.18s ease;
+}
+
+.vp-postThumb:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(13, 40, 80, 0.10);
+  border-color: rgba(29,109,255,0.35);
+}
+
+.vp-thumbMedia{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* hover overlay like IG */
+.vp-postThumb::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2,10,25,0.00) 40%,
+    rgba(2,10,25,0.20) 100%
+  );
+  opacity: 0;
+  transition: 0.18s ease;
+}
+
+.vp-postThumb:hover::after{
+  opacity: 1;
+}
+
+/* video badge */
+.vp-postThumb[data-kind="VIDEO"]::before{
+  content: "▶";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(29,109,255,0.85);
+  color: #fff;
+  font-weight: 900;
+  font-size: 13px;
+  z-index: 2;
+  box-shadow: 0 6px 16px rgba(29,109,255,0.25);
+}
+
+.vp-noMedia{
+  width: 100%;
+  height: 100%;
+  background: #eef5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--vp-muted);
+  font-weight: 700;
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+.vp-certs{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vp-certItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--vp-border);
+  border-radius: 14px;
+  padding: 12px;
+  background: #f8fbff;
+}
+
+.vp-certTitle{
+  font-weight: 800;
+  color: var(--vp-text);
+}
+
+.vp-certMeta{
+  font-size: 12px;
+  color: var(--vp-muted);
+  margin-top: 4px;
+}
+
+.vp-link{
+  font-size: 12px;
+  color: var(--vp-blue);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.vp-link:hover{
+  text-decoration: underline;
+}
+
+.vp-certThumb img{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(29,109,255,0.18);
+}
+
+.vp-pdfBadge,
+.vp-fileBadge{
+  background: rgba(29,109,255,0.10);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--vp-blue);
+  border: 1px solid rgba(29,109,255,0.18);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width: 768px){
+  .vp-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .vp-full{
+    grid-column: span 1;
+  }
+
+  .vp-top{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.po-commentTop{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.po-commentDel{
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #d11a2a;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 12px;
+}
+.po-commentDel:hover{ text-decoration: underline; }

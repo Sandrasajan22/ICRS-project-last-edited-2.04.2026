@@ -1,0 +1,334 @@
+/* ===== Page ===== */
+.vu-page {
+  min-height: 100vh;
+  background: #f6f8fc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0f172a;
+}
+
+.vu-shell {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.vu-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ===== Left Info ===== */
+.vu-info {
+  padding: 10px 6px;
+}
+
+.vu-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.vu-hero-title {
+  font-size: 34px;
+  line-height: 1.12;
+  margin: 10px 0 12px;
+  letter-spacing: -0.3px;
+}
+
+.vu-hero-text {
+  margin: 0 0 18px;
+  color: #475569;
+  line-height: 1.55;
+  font-size: 14.8px;
+}
+
+.vu-tips {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.vu-tip {
+  display: flex;
+  gap: 10px;
+  padding: 12px 12px;
+  background: #ffffff;
+  border: 1px solid #e8eef7;
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+.vu-tip-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4f46e5;
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+
+.vu-tip-title {
+  font-weight: 700;
+  font-size: 13.5px;
+  margin-bottom: 3px;
+}
+
+.vu-tip-text {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ===== Card ===== */
+.vu-card {
+  background: #ffffff;
+  border: 1px solid #e8eef7;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  padding: 22px;
+}
+
+.vu-card-head {
+  margin-bottom: 14px;
+}
+
+.vu-title {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+}
+
+.vu-subtitle {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.vu-muted {
+  color: #64748b;
+}
+
+/* ===== Form ===== */
+.vu-form {
+  margin-top: 14px;
+  display: grid;
+  gap: 14px;
+}
+
+.vu-field {
+  display: grid;
+  gap: 6px;
+}
+
+.vu-label {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #0f172a;
+}
+
+.vu-required {
+  color: #dc2626;
+}
+
+.vu-help {
+  margin: 0;
+  color: #64748b;
+  font-size: 12.7px;
+  line-height: 1.35;
+}
+
+/* Custom file input */
+.vu-file {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #dbe6f5;
+  background: #f8fbff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.08s ease;
+}
+
+.vu-file:hover {
+  border-color: #b9ccff;
+}
+
+.vu-file:active {
+  transform: translateY(1px);
+}
+
+.vu-file input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vu-file-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 800;
+  font-size: 12.5px;
+  flex: 0 0 auto;
+}
+
+.vu-file-name {
+  color: #0f172a;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.vu-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.2s ease;
+}
+
+.vu-btn:active {
+  transform: translateY(1px);
+}
+
+.vu-btn-primary {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.22);
+}
+
+.vu-btn-primary:hover {
+  opacity: 0.96;
+}
+
+.vu-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.vu-btn-secondary {
+  background: #0f172a;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.vu-footnote {
+  margin: 2px 0 0;
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+/* ===== Status Card ===== */
+.vu-status {
+  text-align: center;
+  width: min(520px, 92vw);
+  margin: 0 auto;
+}
+
+.vu-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+
+.vu-badge-warn {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+}
+
+.vu-progress {
+  height: 12px;
+  background: #e8eef7;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 16px 0 8px;
+}
+
+.vu-progress-fill {
+  height: 100%;
+  width: 55%;
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  border-radius: 999px;
+  animation: vuPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes vuPulse {
+  0% { width: 22%; }
+  50% { width: 55%; }
+  100% { width: 22%; }
+}
+
+.vu-progress-text {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.vu-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* Loader */
+.vu-loader {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid #e8eef7;
+  border-top-color: #4f46e5;
+  margin: 0 auto 12px;
+  animation: vuSpin 0.9s linear infinite;
+}
+
+@keyframes vuSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .vu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vu-hero-title {
+    font-size: 28px;
+  }
+
+  .vu-shell {
+    padding: 22px 0;
+  }
+}

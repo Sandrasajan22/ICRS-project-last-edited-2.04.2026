@@ -1,0 +1,66 @@
+/* 🔹 Navbar background */
+.navbar {
+  background: linear-gradient(90deg, #0f172a, #1e3a8a); /* dark blue → blue */
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 🔹 Brand / Logo */
+.navbar .logo {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* 🔹 Nav links base */
+.nav-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 22px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* 🔹 Text link hover */
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* 🔹 Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #38bdf8;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* 🔹 Login / Signup button */
+.signup-btn {
+  background: #2563eb;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #ffffff !important;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+/* 🔹 Button hover */
+.signup-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+.signup-btn::after {
+  display: none;
+}

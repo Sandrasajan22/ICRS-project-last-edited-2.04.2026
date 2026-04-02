@@ -1,0 +1,287 @@
+/* =========================================================
+   performance.css — AI Insights Panel for Performance Dashboard
+   ========================================================= */
+
+/* ── Section wrapper ── */
+.ai-insights-section {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Section header ── */
+.ai-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ai-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-bottom: 6px;
+}
+
+.ai-section-header h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.ai-section-header p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Loading state ── */
+.ai-loading-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ai-spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error state ── */
+.ai-error-box {
+  padding: 18px 24px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 14px;
+  color: #c2410c;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ── KPI overview row ── */
+.ai-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.ai-kpi-card {
+  padding: 20px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.ai-kpi-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  border-radius: 18px;
+  background: currentColor;
+}
+
+.ai-kpi-card:hover { transform: translateY(-3px); }
+
+.ai-kpi-card.indigo { background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; }
+.ai-kpi-card.emerald { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.ai-kpi-card.amber { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+.ai-kpi-card.violet { background: #faf5ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+
+.ai-kpi-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.ai-kpi-value {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ai-kpi-value span {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+.ai-kpi-value.ai-kpi-text {
+  font-size: 17px;
+  text-transform: capitalize;
+}
+
+/* ── Gap prediction card ── */
+.ai-gap-card {
+  display: flex;
+  gap: 24px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 20px;
+  padding: 28px;
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .ai-gap-card { flex-direction: column; }
+}
+
+.ai-gap-left {
+  min-width: 190px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  padding-right: 24px;
+}
+
+.ai-gap-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.ai-gap-value {
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ai-gap-confidence {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.ai-gap-confidence strong { color: #a5b4fc; }
+
+.ai-gap-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ai-gap-message {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+/* ── Warnings list ── */
+.ai-warnings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-warning-item {
+  font-size: 13px;
+  padding: 8px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 10px;
+  color: #fca5a5;
+}
+
+/* ── Action Plan grid ── */
+.ai-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.ai-action-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ai-action-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.ai-action-card h4 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 14px 0;
+}
+
+.ai-action-card ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-action-card ul li {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* ── Historical Chart Section ── */
+.ai-chart-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  margin-top: 8px;
+}
+
+.ai-chart-section h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.ai-chart-container {
+  width: 100%;
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 16px 20px 10px 0;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+}

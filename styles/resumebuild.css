@@ -1,0 +1,209 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  color: #1e293b;
+}
+
+/* MAIN LAYOUT */
+.resume-builder-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* LEFT PANEL (FORM) */
+.resume-builder-left {
+  width: 360px;
+  min-width: 340px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.resume-builder-left h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* TEMPLATE DROPDOWN */
+.resume-builder-left select {
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.resume-builder-left select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* BUTTONS */
+.resume-builder-left button {
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* SAVE BUTTON */
+.resume-builder-left button:first-of-type {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.resume-builder-left button:first-of-type:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* DOWNLOAD BUTTON */
+.resume-builder-left button:last-of-type {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.resume-builder-left button:last-of-type:hover {
+  background: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* FORM */
+.resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resume-form h3 {
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 6px;
+  color: #0f172a;
+}
+
+/* INPUTS */
+.resume-form input,
+.resume-form textarea,
+.resume-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.resume-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.resume-form input:focus,
+.resume-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* DYNAMIC BLOCKS */
+.dynamic-block {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ADD BUTTON */
+.add-btn {
+  background: #2563eb;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.add-btn:hover {
+  background: #1e40af;
+}
+
+/* REMOVE BUTTON */
+.remove-btn {
+  background: #dc2626;
+  color: rgb(194, 37, 37);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.remove-btn:hover {
+  background: #b91c1c;
+}
+
+/* RIGHT PANEL (PREVIEW) */
+.resume-builder-right {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+/* PREVIEW WRAPPER */
+.resume-preview-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* PAPER STYLE */
+#resume-preview {
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .resume-builder-page {
+    flex-direction: column;
+  }
+
+  .resume-builder-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .resume-builder-right {
+    padding: 20px;
+  }
+}

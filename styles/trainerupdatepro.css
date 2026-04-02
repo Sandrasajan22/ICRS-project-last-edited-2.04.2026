@@ -1,0 +1,328 @@
+/* ===============================
+   Trainer Update Profile (Premium)
+   Standalone CSS (No imports)
+================================ */
+
+.up-page {
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.up-card {
+  width: 100%;
+  max-width: 980px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.10);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* top accent line */
+.up-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1d4ed8, #2563eb, #22c55e);
+}
+
+/* ===== Header ===== */
+.up-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.up-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 950;
+  color: #0f172a;
+  letter-spacing: 0.2px;
+}
+
+.up-sub {
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-weight: 650;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.up-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #1d4ed8;
+  background: rgba(29, 78, 216, 0.10);
+  border: 1px solid rgba(29, 78, 216, 0.22);
+  white-space: nowrap;
+}
+
+.up-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #93c5fd, #1d4ed8);
+}
+
+/* ===== Loading ===== */
+.up-loading {
+  padding: 18px 6px;
+  font-weight: 850;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.up-loading::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* ===== Form ===== */
+.up-form {
+  margin-top: 12px;
+}
+
+.up-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.up-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.up-full {
+  grid-column: span 2;
+}
+
+.up-label {
+  font-size: 12px;
+  font-weight: 950;
+  color: #0f172a;
+  letter-spacing: 0.2px;
+}
+
+/* inputs */
+.up-input,
+.up-textarea,
+.up-select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  font-size: 14px;
+  font-weight: 650;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.08s ease;
+}
+
+.up-input::placeholder,
+.up-textarea::placeholder {
+  color: #94a3b8;
+  font-weight: 650;
+}
+
+.up-input:focus,
+.up-textarea:focus,
+.up-select:focus {
+  border-color: rgba(29, 78, 216, 0.65);
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
+}
+
+.up-textarea {
+  resize: vertical;
+  min-height: 160px;
+  line-height: 1.7;
+}
+
+/* error */
+.up-inputError {
+  border-color: rgba(220, 38, 38, 0.55) !important;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.10) !important;
+}
+
+.up-error {
+  font-size: 12px;
+  font-weight: 800;
+  color: #dc2626;
+  margin-top: 2px;
+}
+
+/* ===== Photo upload ===== */
+.up-photoRow {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.up-photoPreview {
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+}
+
+.up-photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.up-photoFallback {
+  font-size: 12px;
+  font-weight: 900;
+  color: #64748b;
+}
+
+.up-photoActions {
+  display: grid;
+  gap: 8px;
+}
+
+.up-file {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px dashed rgba(29, 78, 216, 0.35);
+  background: rgba(29, 78, 216, 0.04);
+  cursor: pointer;
+  font-weight: 850;
+  color: #1d4ed8;
+}
+
+.up-hint {
+  font-size: 12px;
+  font-weight: 750;
+  color: #64748b;
+}
+
+/* ===== Actions ===== */
+.up-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.up-btn {
+  padding: 11px 18px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 950;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.18);
+  transition: transform 0.08s ease, opacity 0.18s ease, box-shadow 0.18s ease;
+}
+
+.up-btn:hover {
+  opacity: 0.96;
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.22);
+}
+
+.up-btn:active {
+  transform: translateY(1px);
+}
+
+.up-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .up-page {
+    padding: 12px;
+  }
+
+  .up-card {
+    padding: 16px;
+  }
+
+  .up-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .up-full {
+    grid-column: span 1;
+  }
+
+  .up-actions {
+    justify-content: stretch;
+  }
+
+  .up-btn {
+    width: 100%;
+  }
+
+  .up-photoRow {
+    grid-template-columns: 1fr;
+  }
+
+  .up-photoPreview {
+    width: 110px;
+    height: 110px;
+  }
+}
+/* ===== File input (custom Choose File button) ===== */
+.up-fileInput {
+  display: none;
+}
+
+.up-fileBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 11px 14px;
+  border-radius: 14px;
+  border: 1px dashed rgba(29, 78, 216, 0.45);
+  background: rgba(29, 78, 216, 0.06);
+  color: #1d4ed8;
+  font-weight: 950;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.18s ease, box-shadow 0.18s ease;
+  user-select: none;
+}
+
+.up-fileBtn:hover {
+  background: rgba(29, 78, 216, 0.10);
+  box-shadow: 0 10px 22px rgba(29, 78, 216, 0.10);
+}
+
+.up-fileBtn:active {
+  transform: translateY(1px);
+}

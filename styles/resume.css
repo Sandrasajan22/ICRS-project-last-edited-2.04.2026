@@ -1,0 +1,268 @@
+.resume-form-wrapper {
+  width: 100%;
+}
+
+.resume-card {
+  background: #ffffff;
+  border-radius: 26px;
+  border: 1px solid #f1f3f7;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+.resume-header {
+  background: linear-gradient(90deg, #08142f, #1f3358);
+  color: #ffffff;
+  padding: 28px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.resume-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.resume-header p {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: right;
+}
+
+.resume-message {
+  margin: 20px 24px 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.resume-message.success {
+  background: #ecfdf3;
+  color: #067647;
+  border: 1px solid #b7ebc6;
+}
+
+.resume-message.error {
+  background: #fef3f2;
+  color: #b42318;
+  border: 1px solid #f4c7c3;
+}
+
+.resume-form {
+  padding: 26px 24px 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e2a3b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #d8e0ea;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 15px 16px;
+  font-size: 16px;
+  color: #0f172a;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #7c8aa0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #8cb1ff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.dynamic-section {
+  margin-top: 28px;
+  padding-top: 8px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.section-header button {
+  border: none;
+  background: #eaf2ff;
+  color: #2456d3;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dynamic-card {
+  margin-bottom: 18px;
+  padding: 18px;
+  border-radius: 20px;
+  background: #f8fbff;
+  border: 1px solid #e3ebf5;
+}
+
+.remove-btn {
+  margin-top: 14px;
+  border: none;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.form-actions button {
+  min-width: 190px;
+  height: 50px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(37, 99, 235, 0.18);
+}
+
+.form-actions button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.km-container {
+  margin-top: 22px;
+  background: #ffffff;
+  border: 1px solid #edf1f5;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.km-container h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.km-container textarea {
+  width: 100%;
+  min-height: 130px;
+  border: 1px solid #d8e0ea;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 15px;
+  resize: vertical;
+  outline: none;
+}
+
+.km-container textarea:focus {
+  border-color: #8cb1ff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.km-container button {
+  margin-top: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.km-result {
+  margin-top: 16px;
+  border-radius: 18px;
+  background: #eef4ff;
+  border: 1px solid #d8e5ff;
+  padding: 18px;
+  text-align: center;
+}
+
+.km-result p {
+  margin: 0;
+  color: #3659b7;
+  font-weight: 700;
+}
+
+.km-result h2 {
+  margin: 8px 0 0;
+  font-size: 34px;
+  color: #1e40af;
+}
+
+@media (max-width: 768px) {
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .resume-header p {
+    text-align: left;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

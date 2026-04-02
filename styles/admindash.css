@@ -1,0 +1,310 @@
+/* =========================
+   ADMIN VERIFICATION PAGE
+========================= */
+
+.admin-page {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+/* Heading */
+.admin-page h2 {
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.admin-table thead {
+  background: #f1f5f9;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-table th {
+  font-weight: 600;
+  color: #334155;
+}
+
+.admin-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* =========================
+   USER CELL
+========================= */
+
+.user-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.admin-page .btn {
+  padding: 6px 14px;
+  font-size: 12.5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* View */
+.admin-page .btn-view {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.admin-page .btn-view:hover {
+  background: #1d4ed8;
+}
+
+/* Approve */
+.admin-page .btn.approve {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.admin-page .btn.approve:hover {
+  background: #15803d;
+}
+
+/* Reject */
+.admin-page .btn.reject {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.admin-page .btn.reject:hover {
+  background: #b91c1c;
+}
+
+/* Action buttons */
+.action-cell {
+  display: flex;
+  gap: 8px;
+}
+
+/* =========================
+   DOCUMENT PREVIEW (PRO)
+========================= */
+
+.doc-preview {
+  margin-top: 24px;
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Header */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.doc-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Hide button */
+.btn-hide {
+  background: #64748b;
+  color: #ffffff;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-hide:hover {
+  background: #475569;
+}
+
+/* =========================
+   DOCUMENT TABS
+========================= */
+
+.doc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tab {
+  padding: 6px 16px;
+  font-size: 12.5px;
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: #eef2ff;
+}
+
+.tab.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* =========================
+   DOCUMENT FRAME
+========================= */
+
+.doc-frame {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+/* Reduced, professional iframe size */
+.doc-frame iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  background: #ffffff;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.admin-table td[colspan] {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 16px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .doc-frame iframe {
+    height: 240px;
+  }
+}
+/* ===== Doc header right buttons layout ===== */
+.doc-header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Extra header buttons */
+.btn-fit {
+  background: #0ea5e9;
+  color: #fff;
+}
+.btn-fit:hover { background: #0284c7; }
+
+.btn-open {
+  background: #334155;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-open:hover { background: #1f2937; }
+
+/* ===== Document frame behavior ===== */
+.doc-frame {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+/* Inner wrapper lets us scale iframe content */
+.doc-frame-inner {
+  width: 100%;
+  height: 340px; /* base height */
+  transform-origin: top left;
+}
+
+/* Normal view */
+.doc-frame.normal-view .doc-frame-inner {
+  transform: scale(1);
+}
+
+/* Fit view (zoom-out look) */
+.doc-frame.fit-view .doc-frame-inner {
+  transform: scale(0.82);
+  width: 122%; /* compensate shrink so it still fills */
+  height: 415px;
+}
+
+.doc-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+/* Helper text */
+.doc-hint {
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: #64748b;
+}

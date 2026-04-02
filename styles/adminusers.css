@@ -1,0 +1,219 @@
+/* adminusers.css */
+.admin-users-container {
+  padding: 30px;
+  background-color: #f8f9fc;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.admin-users-header h1 {
+  font-size: 26px;
+  color: #1a1e2b;
+  margin-bottom: 8px;
+}
+
+.admin-users-header p {
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.admin-users-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.admin-search-input {
+  flex: 1;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.admin-role-select {
+  padding: 12px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  min-width: 150px;
+  color: #4b5563;
+}
+
+.admin-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  overflow-x: auto;
+}
+
+.admin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-users-table th {
+  background-color: #f9fafb;
+  padding: 16px 20px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #6b7280;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-users-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.admin-users-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.admin-users-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.admin-users-table .row-blocked td {
+  background-color: #fff1f2;
+}
+
+.admin-user-name {
+  font-weight: 600;
+  color: #111827;
+  font-size: 14px;
+}
+
+.admin-user-email {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.admin-td-id {
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Badges */
+.admin-role-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.role-student { background-color: #e0e7ff; color: #4338ca; }
+.role-mentor { background-color: #d1fae5; color: #047857; }
+.role-trainer { background-color: #fef3c7; color: #b45309; }
+.role-employer { background-color: #fae8ff; color: #a21caf; }
+.role-job_seeker { background-color: #e0f2fe; color: #0369a1; }
+.role-institution { background-color: #ffedd5; color: #c2410c; }
+.role-admin { background-color: #f1f5f9; color: #475569; }
+.role-default { background-color: #f3f4f6; color: #6b7280; }
+
+.admin-status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-status-badge.verified {
+  color: #059669;
+  background-color: #d1fae5;
+}
+
+.admin-status-badge.pending {
+  color: #d97706;
+  background-color: #fef3c7;
+}
+
+.admin-access-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-access-badge.active {
+  color: #1d4ed8;
+  background-color: #dbeafe;
+}
+
+.admin-access-badge.blocked {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+/* Action Buttons */
+.admin-action-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.block-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.block-btn:hover {
+  background-color: #fecaca;
+  color: #b91c1c;
+}
+
+.unblock-btn {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.unblock-btn:hover {
+  background-color: #a7f3d0;
+  color: #047857;
+}
+
+.admin-protected-text {
+  font-size: 13px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.admin-loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.admin-no-users {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  background-color: #f9fafb;
+}

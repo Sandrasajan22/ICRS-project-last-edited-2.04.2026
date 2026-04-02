@@ -1,0 +1,163 @@
+.minimal-template-white {
+  width: 794px;
+  min-height: 1123px;
+  background: #ffffff;
+  color: #1f2937;
+  padding: 44px 52px 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  line-height: 1.5;
+}
+
+.minimal-white-header {
+  text-align: left;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #d1d5db;
+  margin-bottom: 24px;
+}
+
+.minimal-white-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.2px;
+}
+
+.minimal-white-header h2 {
+  margin: 8px 0 16px;
+  font-size: 19px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.minimal-white-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
+.minimal-white-contact span {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.minimal-white-section {
+  margin-bottom: 24px;
+}
+
+.minimal-white-section h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 6px;
+}
+
+.minimal-white-section p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+.minimal-white-entry {
+  margin-bottom: 18px;
+}
+
+.minimal-white-entry:last-child {
+  margin-bottom: 0;
+}
+
+.minimal-white-entry-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.minimal-white-entry h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.minimal-white-sub {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.minimal-white-date {
+  min-width: 160px;
+  text-align: right;
+}
+
+.minimal-white-date p {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.minimal-white-entry ul {
+  margin: 8px 0 0 18px;
+  padding: 0;
+}
+
+.minimal-white-entry li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.minimal-white-skills p {
+  margin: 6px 0;
+}
+
+.minimal-white-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 26px;
+}
+
+.minimal-white-inline-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.minimal-white-inline-item strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.minimal-white-inline-item span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .minimal-template-white {
+    width: 100%;
+    min-height: auto;
+    padding: 26px 20px 32px;
+  }
+
+  .minimal-white-header h1 {
+    font-size: 28px;
+  }
+
+  .minimal-white-header h2 {
+    font-size: 17px;
+  }
+
+  .minimal-white-entry-head {
+    flex-direction: column;
+  }
+
+  .minimal-white-date {
+    min-width: 0;
+    text-align: left;
+  }
+}
