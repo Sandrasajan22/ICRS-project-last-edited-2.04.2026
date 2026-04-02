@@ -1,0 +1,165 @@
+import random
+import numpy as np
+import pandas as pd
+
+# Reproducible results
+RANDOM_SEED = 42
+random.seed(RANDOM_SEED)
+np.random.seed(RANDOM_SEED)
+
+N = 10000
+
+# Roles and required skills per role
+roles = ["Data Scientist", "Web Developer", "Software Engineer", "Data Analyst"]
+required_skills_map = {
+    "Data Scientist": {"python", "ml", "sql", "problem_solving"},
+    "Web Developer": {"javascript", "react", "html_css", "problem_solving"},
+    "Software Engineer": {"java", "python", "problem_solving"},
+    "Data Analyst": {"sql", "excel", "python", "problem_solving"},
+}
+
+# Universe of tracked skills (binary columns requested)
+tracked_skills = [
+    "skill_python",
+    "skill_ml",
+    "skill_sql",
+    "skill_react",
+    "skill_java",
+    "skill_javascript",
+    "skill_excel",
+    "skill_problem_solving",
+]
+
+# Helper to map skill tokens to tracked skill column names
+skill_token_to_col = {
+    "python": "skill_python",
+    "ml": "skill_ml",
+    "sql": "skill_sql",
+    "react": "skill_react",
+    "java": "skill_java",
+    "javascript": "skill_javascript",
+    "excel": "skill_excel",
+    "problem_solving": "skill_problem_solving",
+    # Additional tokens used for web dev HTML/CSS mapped to javascript/react group if needed
+    "html_css": None,
+}
+
+rows = []
+
+for i in range(N):
+    # Assign role
+    role = random.choice(roles)
+
+    # Generate scores (0-10). Use distributions to create realistic spread, then clip to [0,10].
+    technical_score = float(np.clip(np.random.normal(loc=6.0, scale=2.5), 0, 10))
+    communication_score = float(np.clip(np.random.normal(loc=6.0, scale=2.5), 0, 10))
+    confidence_score = float(np.clip(np.random.normal(loc=6.0, scale=2.5), 0, 10))
+    task_score = float(np.clip(np.random.normal(loc=6.0, scale=2.0), 0, 10))
+    problem_solving_score = float(np.clip(np.random.normal(loc=6.0, scale=2.0), 0, 10))
+    mentor_rating = float(np.clip(np.random.normal(loc=6.5, scale=2.0), 0, 10))
+
+    # Decide user skills: start from required skills, then randomly add or drop some to create variety
+    required = set(required_skills_map[role])
+    user_skills = set()
+
+    # Probability to have each required skill: higher than non-required
+    for skill_token in ["python", "ml", "sql", "react", "java", "javascript", "excel", "problem_solving", "html_css"]:
+        if skill_token in required:
+            # required skills more likely to be present but not guaranteed
+            present = random.random() < 0.85
+        else:
+            # non-required skills less likely
+            present = random.random() < 0.25
+
+        # Introduce some correlation with technical_score: higher technical_score increases chance of extra skills
+        if not present and random.random() < (technical_score / 40.0):
+            present = True
+
+        if present:
+            user_skills.add(skill_token)
+
+    # Normalize user skills: if html_css present, map to javascript/react presence sometimes
+    if "html_css" in user_skills:
+        # give a chance to set javascript or react
+        if random.random() < 0.7:
+            user_skills.add("javascript")
+        if random.random() < 0.4:
+            user_skills.add("react")
+
+    # Build binary skill columns from user_skills
+    skill_binaries = {}
+    for token, col in skill_token_to_col.items():
+        if col is None:
+            continue
+        skill_binaries[col] = 1 if token in user_skills else 0
+
+    # Compose user_skills string (only include tokens that map to tracked columns or html_css)
+    # Keep tokens human-readable
+    user_skills_list = sorted(list(user_skills))
+    user_skills_str = ",".join(user_skills_list)
+
+    # Compute missing skills: required - user_skills
+    missing = sorted(list(required - user_skills))
+    missing_skills_str = ",".join(missing)
+
+    # likes and follows counts (simulate social metrics)
+    likes_count = int(np.clip(np.random.poisson(lam=20) + int(technical_score // 1), 0, 10000))
+    follows_count = int(np.clip(np.random.poisson(lam=50) + int(confidence_score // 1), 0, 10000))
+
+    # Determine skill_gap per rules:
+    # - If communication_score < 4 → skill_gap = "communication"
+    # - Else if confidence_score < 4 → skill_gap = "confidence"
+    # - Else if missing skills exist OR technical_score < 5 → skill_gap = "technical"
+    # - Else → skill_gap = "none"
+    if communication_score < 4:
+        skill_gap = "communication"
+    elif confidence_score < 4:
+        skill_gap = "confidence"
+    elif (len(missing) > 0) or (technical_score < 5):
+        skill_gap = "technical"
+    else:
+        skill_gap = "none"
+
+    row = {
+        "user_id": f"user_{i+1:05d}",
+        "goal_role": role,
+        "technical_score": round(technical_score, 2),
+        "communication_score": round(communication_score, 2),
+        "confidence_score": round(confidence_score, 2),
+        "task_score": round(task_score, 2),
+        "problem_solving_score": round(problem_solving_score, 2),
+        "mentor_rating": round(mentor_rating, 2),
+        # binary skill columns
+        **skill_binaries,
+        "user_skills": user_skills_str,
+        "missing_skills": missing_skills_str,
+        "likes_count": likes_count,
+        "follows_count": follows_count,
+        "skill_gap": skill_gap,
+    }
+
+    rows.append(row)
+
+# Create DataFrame and ensure all tracked skill columns exist
+df = pd.DataFrame(rows)
+for col in tracked_skills:
+    if col not in df.columns:
+        df[col] = 0
+
+# Reorder columns for readability
+cols_order = [
+    "user_id", "goal_role",
+    "technical_score", "communication_score", "confidence_score",
+    "task_score", "problem_solving_score", "mentor_rating",
+] + tracked_skills + [
+    "user_skills", "missing_skills", "likes_count", "follows_count", "skill_gap"
+]
+df = df[cols_order]
+
+# Save to CSV
+output_filename = "skill_gap_dataset.csv"
+df.to_csv(output_filename, index=False)
+
+print(f"Saved {len(df)} rows to {output_filename}")
+import os
+print(os.path.abspath("skill_gap_dataset.csv"))
